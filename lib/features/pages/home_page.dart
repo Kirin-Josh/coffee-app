@@ -1,3 +1,4 @@
+import 'package:coffee_delivery/features/pages/coffee_detail_page.dart';
 import 'package:coffee_delivery/features/theme/theme.dart';
 import 'package:coffee_delivery/features/widgets/search.dart';
 import 'package:coffee_delivery/models/coffee_model.dart';
@@ -55,7 +56,14 @@ class _CoffeeHomePageState extends State<CoffeeHomePage> {
           itemBuilder: (context, index) {
             final coffee = listOfCoffee[index];
             return GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => CoffeeDetailPage(coffee: coffee),
+                  ),
+                );
+              },
               child: Container(
                 padding: const EdgeInsets.fromLTRB(8, 8, 8, 12),
                 decoration: BoxDecoration(
@@ -69,11 +77,14 @@ class _CoffeeHomePageState extends State<CoffeeHomePage> {
                       children: [
                         ClipRRect(
                           borderRadius: BorderRadius.circular(12),
-                          child: Image.asset(
-                            coffee.image,
-                            width: double.infinity,
-                            height: 160,
-                            fit: BoxFit.cover,
+                          child: Hero(
+                            tag: coffee.image,
+                            child: Image.asset(
+                              coffee.image,
+                              width: double.infinity,
+                              height: 160,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                         Align(
@@ -143,10 +154,7 @@ class _CoffeeHomePageState extends State<CoffeeHomePage> {
                             borderRadius: BorderRadius.circular(8),
                           ),
                           //alignment: Alignment.center,
-                          child: Icon(
-                             Icons.add,
-                            color: Colors.white,
-                          ),
+                          child: Icon(Icons.add, color: Colors.white),
                         ),
                       ],
                     ),

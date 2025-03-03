@@ -1,3 +1,4 @@
+import 'package:coffee_delivery/features/pages/favorite_page.dart';
 import 'package:coffee_delivery/features/pages/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
@@ -9,7 +10,7 @@ final menu = [
   },
   {
     'icon': Iconsax.heart,
-    'destination': const Center(child: Text('Fav')),
+    'destination': const FavoritePage(),
   },
   {
     'icon': Iconsax.shopping_bag,
