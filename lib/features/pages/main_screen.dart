@@ -10,11 +10,12 @@ class CoffeAppMainScreen extends StatefulWidget {
 }
 
 class _CoffeAppMainScreenState extends State<CoffeAppMainScreen> {
+  int menuIndex = 0;
   @override
   Widget build(BuildContext context) {
-    int menuIndex = 0;
     return Scaffold(
-      backgroundColor: AppColors.tertColor,
+      body: menu[menuIndex]['destination'] as Widget,
+      backgroundColor: AppColors.quartColor,
       bottomNavigationBar: Padding(
         padding: EdgeInsets.symmetric(horizontal: 30),
         child: Row(
@@ -23,7 +24,11 @@ class _CoffeAppMainScreenState extends State<CoffeAppMainScreen> {
             bool isActive = menuIndex == index;
             return Expanded(
               child: InkWell(
-                onTap: () {},
+                onTap: () {
+                  setState(() {
+                    menuIndex = index;
+                  });
+                },
                 child: SizedBox(
                   height: 70,
                   child: Column(

@@ -42,7 +42,7 @@ class GetStarted extends StatelessWidget {
                         height: 1.3,
                       ),
                     ),
-                    const SizedBox(height: 5),
+                    const SizedBox(height: 10),
                     const Text(
                       textAlign: TextAlign.center,
                       'Welcome to BrewHube coffee corner, where every cup is deightful for you.',
@@ -53,7 +53,7 @@ class GetStarted extends StatelessWidget {
                         height: 1.3,
                       ),
                     ),
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 30),
                     PrimaryButtonWidget(
                       name: 'Get Started',
                       borderRadius: 20,
